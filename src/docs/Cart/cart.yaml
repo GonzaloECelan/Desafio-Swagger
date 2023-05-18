@@ -1,0 +1,96 @@
+paths:
+
+  /api/cart/{cid}:
+    get:
+      summary: Obtiene carrito de usuario por id
+      tags:
+        - Carrito de compra
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: Id del carrito a obtener
+          schema:
+            $type: String 
+      responses:
+        "200":
+          description: Se obtuvo carrito de compra de la base de datos MD
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#components/schemas/Cart'
+        "500":
+          description: Error interno del servidor
+
+  /api/cart/newCart:
+    post:
+      summary: Crear un carrito de compra al usuario
+      tags:
+        - Carrito de compra
+      responses:
+        "200":
+          description: Se creo carrito de compra satisfactoriamente a la base de datos MD
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#components/requestBodies/addCart'
+
+
+  /api/cart/delete/{cid}:
+    delete:
+      summary: Elimina carrito de usuario
+      tags:
+        - Carrito de compra
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: Id del carrito a eliminar
+          schema:
+            $type: String 
+      responses:
+        "200":
+          description: Se elimino carrito de compra satisfactoriamente a la base de datos MD
+          content:
+            application/json:
+              schema:
+                $ref: '#components/schemas/Cart'
+
+
+components:
+  schemas:
+    Cart:
+      type: object
+      properties:
+        _id:
+          type: Object Id
+          description: Id autogenerado por mongo DB
+        username:
+          type: String
+          description: nombre de usuario
+        cart:
+          type: Array
+          description: carrito de compra de usuario
+
+      example:
+        _id: ObjectId('63e04ad632a0a690549d8c21')
+        username: GonzaloC
+        cart: []
+  
+  requestBodies:
+    addCart:
+      type: object
+      properties:
+        username:
+          type: String
+          description: nombre de usuario
+        cart:
+          type: Array
+          description: carrito de compra de usuario
+      example:
+        username: Laura12
+        cart: []

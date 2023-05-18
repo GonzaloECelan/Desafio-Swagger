@@ -1,0 +1,236 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+
+body{
+    background: #283048;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #859398, #283048);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #859398, #283048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+
+form{
+    max-width: 500px;
+    margin: auto;
+    margin-top: 150px;
+    height: 600px;
+    border-radius: 8px;
+    background-color: rgba(1, 1, 1, 0.29);
+    backdrop-filter: blur(1.5px);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 5px 50px 10px rgba(255, 255, 255, 0.253);
+}
+form:hover{
+   
+    transition: all 0.5s;
+    cursor: pointer;
+    
+}
+
+form .login{
+   max-width: 200px;
+   margin-left: 150px;
+margin-top: 20px;
+    height: 50px;;
+}
+
+form .user{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    /* clip-path: circle(50% at 50% 50%); */
+    background-image: url('./images/user.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    margin-top: 100px;
+    margin-left: 175px;
+}
+.login h1{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 3px;
+    font-size: 35px;
+    color: white;
+}
+
+form .box{
+    width: 400px;
+    margin-left: 50px;
+    margin-top: 200px;
+    height: 300px;
+}
+
+.input-field .input{
+    height: 45px;
+    width: 87%;
+    border: none;
+    border-radius: 30px;
+    color: #683636;
+    font-size: 15px;
+    padding: 0 0 0 45px;
+    background: rgba(255, 255, 255, 0.319);
+    outline: none;
+}
+
+i{
+    position: relative;
+    top: -33px;
+    left: 17px;
+    color: #fff;
+}
+
+button{
+    width: 200px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.758);
+    border: none;
+   margin-left: 100px;
+   font-size: 15px;
+   letter-spacing: 3px;
+
+}
+
+
+button:hover{
+    cursor: pointer;
+    box-shadow: 1px 1px 10px 5px rgba(255, 255, 255, 0.316);
+    transition: all 0.5s;
+}
+
+.password{
+    width: 200px;
+    margin-left: 100px; 
+ 
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+.password span{
+    color: white;
+    font-size: 16px;
+    letter-spacing: 2px;
+
+}
+
+.register a span{
+    width: 200px;
+    margin-left: 100px;
+    color: white;
+    font-size: 16px;
+    letter-spacing: 2px;
+
+}
+.register a{
+    text-decoration: none;
+}
+
+
+.registro{
+    max-width: 400px;
+    height: 560px;
+    margin: auto;
+    margin-top: 150px;
+    background-color: rgba(0, 0, 0, 0.23);
+    border-radius: 4px;
+    box-shadow: 1px 5px 50px 10px rgba(255, 255, 255, 0.253);
+    backdrop-filter: blur(1.5px);
+}
+.registro .sign{
+ height: 50px;
+margin-bottom: 20px;
+   
+}
+
+.registro .sign h1{
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    letter-spacing: 3px;
+    padding-top: 15px;
+}
+
+.registro .box1{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 400px;
+    margin: auto;
+}
+
+.registro label{
+    font-size: 16px;
+    color: white;
+    letter-spacing: 3px;
+    font-family: monospace;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.box1 input{
+    height: 30px;
+    border-radius: 3px;
+    border: none;
+    font-size: 12px;
+    padding-left: 10px;
+    outline: none;
+}
+
+.registro .btn-register{
+    position: absolute;
+    margin-top: 510px;
+    width: 200px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.758);
+    border: none;
+   margin-left: 100px;
+   font-size: 15px;
+   letter-spacing: 3px;
+
+}
+
+.registro .btn-register:hover{
+    cursor: pointer;
+    box-shadow: 1px 1px 10px 5px rgba(255, 255, 255, 0.316);
+    transition: all 0.5s;
+}
+
+.facebook{
+display: flex;
+    width: 50px;
+    height: 55px;
+    background-color: #4267B2;
+    box-shadow: 1px 5px 50px 10px rgba(255, 255, 255, 0.253);
+
+}
+
+/* .facebook::hover a{
+    width: 300px;
+    transition: all 0.5s;
+    display: block;
+} */
+
+.facebook a{
+    color:white;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 17px;
+    margin-left: 45px;
+    margin-top: 15px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    overflow: hidden;
+    display: none;
+   
+
+}
+
+.facebook i{
+    color:white;
+    margin-top: 45px;
+    font-size: 30px;
+   margin-left: 10px;
+}
+

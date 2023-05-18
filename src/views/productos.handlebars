@@ -1,0 +1,23 @@
+<div class="container">
+<h1>Nuestros productos</h1>
+<button id="logout" onclick="logout()">Logout</button>
+</div>
+{{#each product}}
+<div>
+    <p>Nombre:{{this.title}}</p>
+    <p>Precio:${{this.price}}</p>
+    <p>Stock:{{this.stock}}</p>
+    <button id="button" type="button">Añadir al carrito</button>
+
+</div>
+{{/each}}
+<script>
+    const logoutButton = document.getElementById('logout');
+    function logout(){
+        window.location.href = '/api/session/logout'
+    }
+    logoutButton.addEventListener('click',logout)
+</script>
+
+
+

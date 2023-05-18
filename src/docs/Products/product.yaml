@@ -1,0 +1,193 @@
+paths:
+
+  /api/product/home:
+    get:
+      summary: Obtiene todos los productos
+      tags:
+        - Producto
+      responses:
+        "200":
+          description: Se obtuvo todos los productos satisfactoriamente de la base de datos MD
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#components/schemas/Product'
+        "500":
+          description: Error interno del servidor
+
+  /api/product/{pid}:
+    get:
+      summary: Obtiene producto por id
+      tags: 
+        - Producto 
+      parameters:
+        - name: pid
+          in: path
+          required: true
+          description: Id del producto que se quiere obtener
+          schema:
+            $type: String
+
+      responses:
+        "200":
+          description: Producto encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#components/schemas/Product'  
+    
+    put:
+      summary: Actualiza el producto por id
+      tags:
+        - Producto
+      parameters:
+        - name: pid
+          in: path
+          required: true
+          description: Id del producto que se quiere obtener
+          schema:
+            $type: String
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#components/requestBodies/updateProduct'
+  
+  /api/product/delete/{pid}:
+    delete:
+      summary: Elimina producto por Id
+      tags:
+        - Producto
+      parameters:
+        - name: pid
+          in: path
+          required: true
+          description: Id del producto que se quiere obtener
+          schema:
+            $type: String
+      
+      responses:
+        "200":
+          description: Producto eliminado
+          content:
+            application/json:
+              schema:
+                $ref: '#components/schemas/Product'
+
+  /api/product/add:
+    post:
+      summary: Añade producto a base de datos MD
+      tags:
+        - Producto
+      responses:
+        "200":
+          description: Se agrego producto satisfactoriamente a la base de datos MD
+      requestBody:
+        required: true
+        content:
+            application/json:
+              schema:
+                $ref: '#components/requestBodies/addProduct'
+    
+
+
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        _id:
+          type: Object Id
+          description: Id autogenerado por mongo DB
+        title:
+          type: String
+          description: nombre del producto
+        description: 
+          type: String
+          description: descripcion del producto
+        code: 
+          type: Number
+          description: codido de producto, unico
+        stock:
+          type: Number
+          description: cantidad de producto disponible
+        price: 
+          type: Number
+          description: precio de producto
+        category:
+          type: String
+          description: categoria a cual pertenece el producto
+
+      example:
+        _id: ObjectId('63e04ad632a0a690549d8c21')
+        title: Celular Samsung A30
+        description: celular samsung
+        code: 3432432423
+        stocK: 120
+        price: $70000
+        category: Electronic
+
+  requestBodies:
+    updateProduct:
+      type: object
+      properties:
+        title:
+          type: String
+          description: nombre del producto
+        description: 
+          type: String
+          description: descripcion del producto
+        code: 
+          type: Number
+          description: codido de producto, unico
+        stock:
+          type: Number
+          description: cantidad de producto disponible
+        price: 
+          type: Number
+          description: precio de producto
+        category:
+          type: String
+          description: categoria a cual pertenece el producto
+      example:
+        title: Celular Samsung A30
+        description: celular samsung
+        code: 3432432423
+        stocK: 110
+        price: $77000
+        category: Electronic
+
+    addProduct:
+      type: object
+      properties:
+        title:
+          type: String
+          description: nombre del producto
+        description: 
+          type: String
+          description: descripcion del producto
+        code: 
+          type: Number
+          description: codido de producto, unico
+        stock:
+          type: Number
+          description: cantidad de producto disponible
+        price: 
+          type: Number
+          description: precio de producto
+        category:
+          type: String
+          description: categoria a cual pertenece el producto
+      example:
+        title: Celular Samsung A60
+        description: celular samsung
+        code: 53243123213
+        stocK: 160
+        price: $95000
+        category: Electronic
+
+  
+       
